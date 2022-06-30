@@ -5,7 +5,7 @@ import DisplayMusic from './Components/DisplayMusic';
 
 function App() {
 
-  const [songs, setSongs] = useState([]);
+  const [songs, setSongs] = useState([{title: "Momentary", artist:"Hands Like Houses"}, {album:"Dissoants", genre:"Rock"}, {releasedate:"02-15-2016"}]);
 
   function addNewSong(song){
 
