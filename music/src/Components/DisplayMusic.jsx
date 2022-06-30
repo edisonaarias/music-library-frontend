@@ -9,9 +9,13 @@ const DisplayMusic = (props) => {
     const [Genre, setGenre] = useState('');
     const [Date, setDate] = useState('');
 
+    function handleSubmit(event) {
+        event.preventDefault();
+    }
+
 
     return ( 
-        <from>
+        <from onSubmit={handleSubmit}>
             <from>Title</from>
             <input type='words' value={Title} onChange={(event) => setTitle(event.target.value)} />
             <from>Artist</from>
