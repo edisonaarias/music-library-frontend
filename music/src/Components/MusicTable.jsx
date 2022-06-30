@@ -1,7 +1,7 @@
 
 
-const Music_Table = (props) => {
-
+const MusicTable = (props) => {
+    console.log("hello from muic table", props.songs)
   return ( 
           <table>
               <thead>
@@ -14,15 +14,15 @@ const Music_Table = (props) => {
               </tr>
               </thead>
               <tbody>
-                  {props.parentSongs.map((song, index) => {
+                  {props.songs.map((song, index) => {
                       return (
-                          <tr>
-                          <td>{index + 1}</td>
+                          <tr key={index}>
+
                           <td>{song.title}</td>
                           <td>{song.artist}</td>
                           <td>{song.album}</td>
                           <td>{song.genre}</td>
-                          <td>{song.date}</td>
+                          <td>{song.release_date}</td>
                           </tr>
                       );
               })}        
@@ -31,4 +31,4 @@ const Music_Table = (props) => {
   );
 }
 
-export default Music_Table;
+export default MusicTable;
