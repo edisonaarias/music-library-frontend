@@ -1,11 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Search_Bar from './Components/Search_Bar';
-
+import Music_Table from './Components/Search_Bar';
+import DisplayMusic from './Components/DisplayMusic';
 
 function App() {
 
-  const [songs, setSongs] = useState([]);
+  const [songs, setSongs] = useState([{title: 'The Outside'}, {Arist: 'Red'}, {Album:'Genius'}, {Album:'Release Date'}]);
+  //  New Song:
+//  {
+//      "title": "The Outside",
+//      "artist": "Red",
+//      "album": "Genius",
+//      "genre": "Metal/Christian rock",
+//      "release_date": "2011-02-01"
+//  }
 
   useEffect(() => {
    makeGetRequest();
@@ -23,7 +32,9 @@ function App() {
 
   return (
     <div>
-      <Search_Bar parentSongs={songs}/>
+    
+      <Music_Table parentSongs={songs}/>
+      <DisplayMusic/>
     
     </div>
   );

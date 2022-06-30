@@ -10,7 +10,7 @@ import { useEffect } from 'react';
 //      "release_date": "2011-02-01"
 //  }
 
-const Search_Bar = (props) => {
+const Music_Table = (props) => {
 
     return ( 
             <table>
@@ -38,4 +38,4 @@ const Search_Bar = (props) => {
     );
 }
 
-export default Search_Bar;
+export default Music_Table;

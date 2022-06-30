@@ -1,32 +1,34 @@
 
 
-  useEffect(() => {
-    makeGetRequest();
-  }, [])
-//  New Song:
-//  {
-//      "title": "The Outside",
-//      "artist": "Red",
-//      "album": "Genius",
-//      "genre": "Metal/Christian rock",
-//      "release_date": "2011-02-01"
-//  }
-  async function getAllSongs(){
-    let response = await axios.post('http://127.0.0.1:8000/api/songs/', newSong);
-    await getAllSongs();
-(
-    <div>
-      <table>
-        <thead>
-          <tr>
-          <th>song title</th>
-          <th>album</th>
-          <th>artist</th>
-          <th>genre</th>
-          <th>release_date</th>
-          </tr>
-        </thead>
-      </table>
-    </div>
+const Music_Table = (props) => {
+
+  return ( 
+          <table>
+              <thead>
+              <tr>
+                  <th>Title</th>
+                  <th>Artist</th>
+                  <th>Album</th>
+                  <th>Genre</th>
+                  <th>Release Date</th>
+              </tr>
+              </thead>
+              <tbody>
+                  {props.parentSongs.map((song, index) => {
+                      return (
+                          <tr>
+                          <td>{index + 1}</td>
+                          <td>{song.title}</td>
+                          <td>{song.artist}</td>
+                          <td>{song.album}</td>
+                          <td>{song.genre}</td>
+                          <td>{song.date}</td>
+                          </tr>
+                      );
+              })}        
+              </tbody>
+          </table>
   );
 }
+
+export default Music_Table;
